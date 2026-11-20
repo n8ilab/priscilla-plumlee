@@ -113,7 +113,19 @@ footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:26px}
 .kp b{display:block;font:700 28px Georgia;color:var(--navy)}.kp span{font-size:12px;color:var(--mut)}
 .reveal{opacity:0;transform:translateY(24px);transition:all .7s}.reveal.in{opacity:1;transform:none}
 @media(max-width:980px){.search{grid-template-columns:1fr 1fr}.strip .wrap,.tk,.comm,.quotes{grid-template-columns:1fr 1fr}.mapgrid,.calc,.worth,.about,.contact,.mbox .bd,footer .cols{grid-template-columns:1fr}.mapcard{position:static}.hero h1{font-size:38px}.board,.kp{grid-template-columns:1fr 1fr}nav.top .links a:not(.cta){display:none}}
-</style></head><body>
+/* photos (added when Priscilla's pictures arrive) */
+.hbadge{display:flex;align-items:center;gap:12px;margin-top:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:60px;padding:6px 18px 6px 6px;width:max-content;backdrop-filter:blur(4px)}
+.hbadge img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:2px solid #f3c9a0}.hbadge b{display:block;font-size:15px}.hbadge span{font-size:12.5px;opacity:.85}
+.portrait .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;opacity:0;transition:opacity .6s}.portrait.has .pimg{opacity:1}
+.portrait.has .pm,.portrait.has .ps,.portrait.has svg{display:none}
+.life{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:30px}.life figure{margin:0;border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.life img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.life figcaption{padding:10px 14px;font-size:14px;color:var(--mut)}
+.chead{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:3px solid #f3c9a0;float:right;margin:0 0 10px 14px}
+[hidden]{display:none!important}
+</style>
+<meta property="og:title" content="Priscilla Plumlee, REALTOR® | Lee County Land, Ranches & Homes">
+<meta property="og:description" content="Land, ranches and homes in Lee County, from someone who grew up on them.">
+<meta property="og:image" content="img/hero-bluebonnets.jpg" id="ogImg"></head><body>
 <div class="ribbon">CONCEPT PREVIEW · designed for Priscilla Plumlee by N8 Layer Works · not an official site · listing details are examples and may have changed</div>
 <nav class="top"><div class="wrap">
   <a class="mark" href="#top"><div class="mono">PP</div><div><b>Priscilla Plumlee</b><span>REALTOR® · LEE COUNTY, TX</span></div></a>
@@ -129,6 +141,7 @@ footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:26px}
   <div class="eyebrow">North Lee County, born and raised</div>
   <h1>Land, ranches and homes in Lee County, from someone who grew up on them.</h1>
   <p class="lead">Whether it's your first home in Giddings, twenty acres outside Lexington or the family place you're ready to pass on, I'll walk the fence line with you.</p>
+  <div class="hbadge" id="hBadge" hidden><img data-photo="headshot" alt="Priscilla Plumlee"><div><b>Priscilla Plumlee</b><span>REALTOR®, GRI · Schultz Texas Properties</span></div></div>
   <div class="creds"><span>REALTOR®</span><span>GRI</span><span>PSA</span><span>SRS</span><span>Schultz Texas Properties</span></div>
   <div class="search">
     <div><label>Where</label><select id="sTown"><option value="">All of Lee County</option><option>Giddings</option><option>Lexington</option><option>Dime Box</option><option>Lincoln</option><option>Serbin</option></select></div>
@@ -210,7 +223,7 @@ footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:26px}
 <!-- ABOUT -->
 <section id="about"><div class="wrap">
   <div class="about">
-    <div class="portrait reveal"><div class="pm">PP</div><div class="ps">HEADSHOT GOES HERE</div>
+    <div class="portrait reveal"><img class="pimg" data-photo="headshot" alt="Priscilla Plumlee, REALTOR®"><div class="pm">PP</div><div class="ps">HEADSHOT GOES HERE</div>
       <svg viewBox="0 0 400 120"><path d="M0 70 Q60 40 120 62 T240 58 T400 50 V120 H0Z" fill="#6b7f5e"/><path d="M0 92 Q80 70 170 88 T400 80 V120 H0Z" fill="#4d5d43"/>
       <g fill="#3d5a9e"><circle cx="40" cy="96" r="4"/><circle cx="46" cy="90" r="4"/><circle cx="52" cy="98" r="4"/><circle cx="300" cy="94" r="4"/><circle cx="306" cy="88" r="4"/><circle cx="312" cy="96" r="4"/></g>
       <g fill="#c8553d"><circle cx="90" cy="100" r="4"/><circle cx="350" cy="102" r="4"/></g></svg></div>
@@ -222,6 +235,7 @@ footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:26px}
       <div class="des"><div><b>GRI</b><span>Graduate, REALTOR® Institute: advanced contracts, law and finance training</span></div><div><b>PSA</b><span>Pricing Strategy Advisor: pricing homes and land from real comps</span></div><div><b>SRS</b><span>Seller Representative Specialist: the seller's advocate</span></div></div>
     </div>
   </div>
+  <div class="life" id="life" hidden></div>
   <div class="quotes">
     <div class="q reveal">"She knew which way the creek floods before we did, and she knew who to call about the well."<b>Sample review · land buyer, Lexington</b></div>
     <div class="q reveal">"We got a fair price for Dad's place and never felt rushed. She grew up two roads over."<b>Sample review · seller, North Lee County</b></div>
@@ -231,7 +245,7 @@ footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:26px}
 
 <!-- CONTACT -->
 <section id="contact" style="background:var(--sand)"><div class="wrap contact">
-  <div class="cinfo reveal"><div class="eyebrow">Let's talk land</div><h2 style="font-size:36px">Call, text or drop by the Giddings office.</h2>
+  <div class="cinfo reveal"><img class="chead" data-photo="headshot" alt="Priscilla Plumlee" hidden><div class="eyebrow">Let's talk land</div><h2 style="font-size:36px">Call, text or drop by the Giddings office.</h2>
     <p style="font-size:18px;margin:14px 0 4px">📱 <a href="tel:+19797167168">(979) 716-7168</a></p>
     <p style="font-size:18px;margin:4px 0">✉️ <a href="mailto:priscilla@schultztexasproperties.com">priscilla@schultztexasproperties.com</a></p>
     <p style="margin-top:18px;opacity:.85">Schultz Texas Properties<br>246 E. Austin (Hwy 290), Giddings, TX 78942<br>Office (979) 249-6869</p>
@@ -266,6 +280,20 @@ footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:26px}
 <div class="toast" id="toast"></div>
 
 <script>
+// 📸 Priscilla's photos: filled in by up/priscilla_photos.py (empty = keep the PP monogram look)
+const PHOTOS = {"headshot": "", "life": []};
+document.addEventListener('DOMContentLoaded', () => {
+  if (PHOTOS.headshot) {
+    document.querySelectorAll('[data-photo=headshot]').forEach(i => { i.src = PHOTOS.headshot; i.hidden = false; });
+    document.getElementById('hBadge').hidden = false;
+    document.querySelector('.portrait').classList.add('has');
+  }
+  if (PHOTOS.life.length) {
+    const L = document.getElementById('life'); L.hidden = false;
+    L.innerHTML = PHOTOS.life.map(p => `<figure class="reveal"><img src="${p.src}" alt="${p.cap}" loading="lazy"><figcaption>${p.cap}</figcaption></figure>`).join('');
+  }
+});
+
 const $=id=>document.getElementById(id);
 const money=n=>'$'+Math.round(n).toLocaleString();
 function toast(m){const t=$('toast');t.textContent=m;t.style.display='block';clearTimeout(t._t);t._t=setTimeout(()=>t.style.display='none',2600)}
